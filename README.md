@@ -1,23 +1,23 @@
 common-sql
 ==========
-### Login with tolerance to non-uinque user configuration (WIP)
+### Login with tolerance to non-uinque user configuration
 ```sql
+# Replace City to user name
 SELECT 
-CustomerName
+City,
+B
 from 
 (
   SELECT 
-  COUNT(CustomerName) as B,
-  CustomerName
+  COUNT(City) as B,
+  City
   from 
     (
       SELECT 
-      CustomerName
+      City
       FROM Customers 
-      WHERE CustomerName='Alfreds Futterkiste' 
-      LIMIT 2
-    )
-  GROUP BY CustomerName
+      WHERE City='London' 
+    ) GROUP BY City
 ) as A
 where A.B = 1;
 ```
