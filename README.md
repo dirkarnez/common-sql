@@ -1,6 +1,6 @@
 common-sql
 ==========
-### Login with tolerance to non-uinque user configuration
+### Login with tolerance to non-uinque user configuration (WIP)
 ```sql
 SELECT 
 CustomerName
@@ -17,6 +17,7 @@ from
       WHERE CustomerName='Alfreds Futterkiste' 
       LIMIT 2
     )
+  GROUP BY CustomerName
 ) as A
 where A.B = 1;
 ```
