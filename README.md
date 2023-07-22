@@ -2,10 +2,20 @@ common-sql
 ==========
 ### Login
 ```sql
-SELECT *
-FROM my_table
-WHERE my_column = 'my_value'
-AND (SELECT COUNT(*)
-     FROM my_table
-     WHERE my_column = 'my_value') <= 1;
+SELECT 
+CustomerName
+from 
+(
+SELECT 
+COUNT(CustomerName) as B, 
+* from 
+  (SELECT 
+  * 
+  FROM Customers 
+  WHERE CustomerName='Alfreds Futterkiste' 
+  LIMIT 2
+  )
+) 
+as A 
+where A.B = 1;
 ```
