@@ -16,7 +16,8 @@ from
       SELECT 
       City
       FROM Customers 
-      WHERE City='London' 
+      WHERE City='London'
+      LIMIT 2
     ) GROUP BY City
 ) as A
 where A.B = 1;
