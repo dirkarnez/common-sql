@@ -25,3 +25,6 @@ db.Table("Customers").
     Having("COUNT(City) = 1").
     Pluck("City", &result)
 ```
+
+### Tutorials
+- [经典学生选课 sql | 黝黑蜗壳](https://evercyan.github.io/blog/views/note/2020/070701.html#no-3)
